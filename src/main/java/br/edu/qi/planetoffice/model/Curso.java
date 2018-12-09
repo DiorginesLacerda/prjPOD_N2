@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 
 @Entity(name = "cursos")
 public class Curso {
+	
 	private Integer idCurso;
 	private String descricao;
 	private Set<Turma> turmas = new HashSet<Turma>(0);
