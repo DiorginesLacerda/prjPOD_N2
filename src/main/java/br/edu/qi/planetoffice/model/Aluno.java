@@ -36,6 +36,12 @@ public class Aluno  implements java.io.Serializable {
     public Aluno(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
+    
+    public Aluno(Pessoa pessoa, String fpagamento) {
+        this.pessoa = pessoa;
+        this.fpagamento = fpagamento;
+     }
+    
     public Aluno(Pessoa pessoa, String fpagamento, Set<Turma> turmas) {
        this.pessoa = pessoa;
        this.fpagamento = fpagamento;

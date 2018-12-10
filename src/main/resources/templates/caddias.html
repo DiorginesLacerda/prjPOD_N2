@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro de Dias</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron" align="center" style="margin-top: 10px;">
+			<h1>Cadastro de dias</h1>
+		</div>
+		<div id="listaDias">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Dia</th>
+					</tr>
+				</thead>
+				<tr th:each="dia : ${all}">
+					<td><span th:text="${dia.descricao}"></span></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<hr />
+		<form action="salvadias" method="post">
+			<div class="form-group">
+				<label for="descricao">Descrição</label> <input type="text"
+					class="form-control" id="descricao" name="descricao"
+					placeholder="Descrição" />
+			</div>
+
+			<button type="submit" class="btn btn-success">Salvar</button>
+		</form>
+
+	</div>
+
+</body>
+</html>

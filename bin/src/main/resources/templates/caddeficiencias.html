@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro de Deficiencias</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron" align="center" style="margin-top: 10px;">
+			<h1>Cadastro de Deficiencias</h1>
+		</div>
+		<div id="listaDeficiencias">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Descrição</th>
+						<th>Grau</th>
+					</tr>
+				</thead>
+				<tr th:each="deficiencia : ${deficiencias}">
+					<td><span th:text="${deficiencia.descricao}"></span></td>
+					<td><span th:text="${deficiencia.grau}"></span></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<hr />
+		<form action="salvadeficiencias" method="post">
+			<div class="form-group">
+				<label for="descricao">Descrição</label> <input type="text"
+					class="form-control" id="descricao" name="descricao"
+					placeholder="Descrição" />
+			</div>
+			<div class="form-group">
+				<label for="grau">Grau</label> <input type="number"
+					class="form-control" id="grau" name="grau" placeholder="Grau" />
+			</div>
+			<button type="submit" class="btn btn-success">Salvar</button>
+		</form>
+
+	</div>
+
+
+</body>
+</html>

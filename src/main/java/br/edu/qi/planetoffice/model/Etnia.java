@@ -27,6 +27,10 @@ public class Etnia  implements java.io.Serializable {
 
     public Etnia() {
     }
+    
+    public Etnia(String descricao) {
+        this.descricao = descricao;
+     }
 
     public Etnia(String descricao, Set<Pessoa> pessoas) {
        this.descricao = descricao;

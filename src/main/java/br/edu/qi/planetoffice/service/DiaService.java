@@ -3,20 +3,13 @@ package br.edu.qi.planetoffice.service;
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Dia;
+import br.edu.qi.planetoffice.repository.IDiaRepository;
 
 @Service
-public class DiaService implements IService<Dia>{
+public class DiaService extends GenericService<Dia>{
 
-	@Override
-	public Iterable<Dia> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void save(Dia t) {
-		// TODO Auto-generated method stub
-		
+	public DiaService(IDiaRepository repository) {
+		super(repository);
 	}
 
 }

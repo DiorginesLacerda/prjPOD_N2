@@ -6,11 +6,14 @@ import org.springframework.stereotype.Service;
 import br.edu.qi.planetoffice.model.Deficiencia;
 import br.edu.qi.planetoffice.repository.IDeficienciaRepository;
 
+
 @Service
 public class DeficienciaService implements IService<Deficiencia> {
 
+	
 	@Autowired
 	IDeficienciaRepository repository;
+	
 	
 	@Override
 	public Iterable<Deficiencia> getAll() {
