@@ -30,7 +30,7 @@ public class DiaController {
 		
 		Dia dia = new Dia(descricao);
 		service.save(dia);
-		
+	
 		Iterable<Dia> all = service.findAll();
 		model.addAttribute("all", all);
 		return "caddias";

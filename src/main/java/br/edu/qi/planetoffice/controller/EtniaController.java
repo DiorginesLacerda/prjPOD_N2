@@ -19,7 +19,7 @@ public class EtniaController {
 
 	@RequestMapping("cadetnias")
 	public String listaEtnias(Model model) {
-		Iterable<Etnia> all = service.getAll();
+		Iterable<Etnia> all = service.findAll();
 		model.addAttribute("all", all);
 		return "cadetnias";
 	}
@@ -32,7 +32,7 @@ public class EtniaController {
 		Etnia etnia = new Etnia(descricao);
 		service.save(etnia);
 		
-		Iterable<Etnia> all = service.getAll();
+		Iterable<Etnia> all = service.findAll();
 		model.addAttribute("all", all);
 		return "cadetnias";
 	}

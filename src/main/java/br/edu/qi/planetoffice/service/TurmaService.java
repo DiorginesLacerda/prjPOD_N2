@@ -1,22 +1,17 @@
 package br.edu.qi.planetoffice.service;
-
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Turma;
+import br.edu.qi.planetoffice.repository.ITurmaRepository;
 
 @Service
-public class TurmaService implements IService<Turma>{
+public class TurmaService extends GenericService<Turma>{
 
-	@Override
-	public Iterable<Turma> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public TurmaService(ITurmaRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Turma t) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

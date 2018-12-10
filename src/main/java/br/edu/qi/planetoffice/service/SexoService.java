@@ -1,22 +1,16 @@
 package br.edu.qi.planetoffice.service;
-
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Sexo;
+import br.edu.qi.planetoffice.repository.ISexoRepository;
 
 @Service
-public class SexoService implements IService<Sexo>{
+public class SexoService extends GenericService<Sexo>{
 
-	@Override
-	public Iterable<Sexo> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public SexoService(ISexoRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Sexo t) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

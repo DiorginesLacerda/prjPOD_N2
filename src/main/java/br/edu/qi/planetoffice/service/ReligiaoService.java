@@ -1,22 +1,17 @@
 package br.edu.qi.planetoffice.service;
-
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Religiao;
+import br.edu.qi.planetoffice.repository.IReligiaoRepository;
 
 @Service
-public class ReligiaoService implements IService<Religiao>{
+public class ReligiaoService extends GenericService<Religiao>{
 
-	@Override
-	public Iterable<Religiao> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ReligiaoService(IReligiaoRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Religiao t) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

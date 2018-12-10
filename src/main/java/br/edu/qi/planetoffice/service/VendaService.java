@@ -3,20 +3,16 @@ package br.edu.qi.planetoffice.service;
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Venda;
+import br.edu.qi.planetoffice.repository.IVendaRepository;
 
 @Service
-public class VendaService implements IService<Venda>{
+public class VendaService extends GenericService<Venda>{
 
-	@Override
-	public Iterable<Venda> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public VendaService(IVendaRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Venda t) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

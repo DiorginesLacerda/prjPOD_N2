@@ -3,20 +3,16 @@ package br.edu.qi.planetoffice.service;
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.TipoFiliacao;
+import br.edu.qi.planetoffice.repository.ITipoFiliacaoRepository;
 
 @Service
-public class TipoFiliacaoService implements IService<TipoFiliacao> {
+public class TipoFiliacaoService extends GenericService<TipoFiliacao> {
 
-	@Override
-	public Iterable<TipoFiliacao> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public TipoFiliacaoService(ITipoFiliacaoRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(TipoFiliacao t) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

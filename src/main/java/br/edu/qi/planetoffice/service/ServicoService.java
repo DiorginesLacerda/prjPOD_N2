@@ -3,20 +3,15 @@ package br.edu.qi.planetoffice.service;
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Servico;
+import br.edu.qi.planetoffice.repository.IServicoRepository;
 
 @Service
-public class ServicoService  implements IService<Servico>{
+public class ServicoService  extends GenericService<Servico>{
 
-	@Override
-	public Iterable<Servico> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ServicoService(IServicoRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Servico t) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

@@ -18,7 +18,7 @@ public class DeficienciaController {
 	
 	@RequestMapping("caddeficiencias")
 	public String listaDeficiencias(Model model) {
-		Iterable<Deficiencia> deficiencias = service.getAll();
+		Iterable<Deficiencia> deficiencias = service.findAll();
 		model.addAttribute("deficiencias", deficiencias);
 		
 		return "caddeficiencias";
@@ -32,7 +32,7 @@ public class DeficienciaController {
 		Deficiencia deficiencia = new Deficiencia(descricao, Integer.parseInt(grau));
 		
 		service.save(deficiencia);
-		Iterable<Deficiencia> deficiencias = service.getAll();
+		Iterable<Deficiencia> deficiencias = service.findAll();
 		model.addAttribute("deficiencias", deficiencias);
 		
 		return "caddeficiencias";

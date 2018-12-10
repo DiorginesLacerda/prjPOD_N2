@@ -3,20 +3,16 @@ package br.edu.qi.planetoffice.service;
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Professor;
+import br.edu.qi.planetoffice.repository.IProfessorRepository;
 
 @Service
-public class ProfessorService implements IService<Professor>{
+public class ProfessorService extends GenericService<Professor>{
 
-	@Override
-	public Iterable<Professor> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ProfessorService(IProfessorRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Professor t) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

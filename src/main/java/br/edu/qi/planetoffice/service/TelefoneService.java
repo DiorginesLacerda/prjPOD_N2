@@ -1,22 +1,19 @@
 package br.edu.qi.planetoffice.service;
 
+
 import org.springframework.stereotype.Service;
 
 import br.edu.qi.planetoffice.model.Telefone;
+import br.edu.qi.planetoffice.repository.ITelefoneRepository;
 
 @Service
-public class TelefoneService implements IService<Telefone> {
+public class TelefoneService extends GenericService<Telefone> {
 
-	@Override
-	public Iterable<Telefone> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public TelefoneService(ITelefoneRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void save(Telefone t) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
