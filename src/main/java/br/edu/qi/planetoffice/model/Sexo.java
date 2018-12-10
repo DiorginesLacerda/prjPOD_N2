@@ -28,6 +28,10 @@ public class Sexo  implements java.io.Serializable {
     public Sexo() {
     }
 
+    public Sexo(String descricao) {
+        this.descricao = descricao;
+     }
+    
     public Sexo(String descricao, Set<Pessoa> pessoas) {
        this.descricao = descricao;
        this.pessoas = pessoas;

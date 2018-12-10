@@ -7,20 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.edu.qi.planetoffice.model.Etnia;
-import br.edu.qi.planetoffice.service.EtniaService;
+
+import br.edu.qi.planetoffice.model.Sexo;
+import br.edu.qi.planetoffice.service.SexoService;
 
 @Controller
-public class EtniaController {
-	
-	@Autowired
-	private EtniaService service;
+public class SexoController {
 
-	@RequestMapping("cadetnias")
-	public String listaEtnias(Model model) {
-		Iterable<Etnia> all = service.findAll();
+	@Autowired
+	SexoService service;
+	
+	@RequestMapping("cadsexos")
+	public String listaSexos(Model model) {
+		Iterable<Sexo> all = service.findAll();
 		model.addAttribute("all", all);
-		return "cadetnias";
+		return "cadsexos";
 	}
 	
 	@RequestMapping(value="salvaetnias", method = RequestMethod.POST)
@@ -28,11 +29,12 @@ public class EtniaController {
 			Model model) {
 		
 		
-		Etnia etnia = new Etnia(descricao);
-		service.save(etnia);
+		Sexo sexo = new Sexo(descricao);
+		service.save(sexo);
 		
-		Iterable<Etnia> all = service.findAll();
+		Iterable<Sexo> all = service.findAll();
 		model.addAttribute("all", all);
-		return "cadetnias";
+		return "cadsexos";
 	}
+	
 }
