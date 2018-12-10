@@ -37,6 +37,13 @@ public class Produto  implements java.io.Serializable {
     public Produto(Item item) {
         this.item = item;
     }
+    
+    public Produto(Item item, Integer quantidade, String local) {
+        this.item = item;
+        this.quantidade = quantidade;
+        this.local = local;
+     }
+    
     public Produto(Item item, Integer quantidade, String local, Set<Turma> turmas) {
        this.item = item;
        this.quantidade = quantidade;

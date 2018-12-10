@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro de Produtos</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron" align="center" style="margin-top: 10px;">
+			<h1>Cadastro de Produtos</h1>
+		</div>
+		<div id="listaProdutos">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Descrição</th>
+						<th>Valor</th>
+						<th>Quantidade</th>
+						<th>Local</th>
+					</tr>
+				</thead>
+				<tr th:each="produto : ${all}">
+					<td><span th:text="${produto.item.descricao}"></span></td>
+					<td><span th:text="${produto.item.valor}"></span></td>
+					<td><span th:text="${produto.quantidade}"></span></td>
+					<td><span th:text="${produto.local}"></span></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<hr />
+		<form action="salvaprodutos" method="post">
+			<div class="form-group">
+				<label for="descricao">Descrição</label> <input type="text"
+					class="form-control" id="descricao" name="descricao"
+					placeholder="Descrição" />
+			</div>
+			<div class="form-group">
+				<label for="quantidade">Valor</label> <input type="number"
+					class="form-control" id="valor" name="valor" placeholder="Valor" />
+			</div>
+			<div class="form-group">
+				<label for="quantidade">Quantidade</label> <input type="number"
+					class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade" />
+			</div>
+			<div class="form-group">
+				<label for="local">Local</label> <input type="text"
+					class="form-control" id="local" name="local"
+					placeholder="Local" />
+			</div>
+			<button type="submit" class="btn btn-success">Salvar</button>
+		</form>
+
+	</div>
+
+
+</body>
+</html>
