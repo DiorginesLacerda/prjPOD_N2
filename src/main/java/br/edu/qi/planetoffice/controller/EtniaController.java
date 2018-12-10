@@ -24,7 +24,7 @@ public class EtniaController {
 	}
 	
 	@RequestMapping(value="salvaetnias", method = RequestMethod.POST)
-	public String salvadeficiencias(@RequestParam("descricao") String descricao,
+	public String salvadEtnias(@RequestParam("descricao") String descricao,
 			Model model) {
 		
 		

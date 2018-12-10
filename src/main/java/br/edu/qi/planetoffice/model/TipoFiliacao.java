@@ -28,6 +28,10 @@ public class TipoFiliacao  implements java.io.Serializable {
     public TipoFiliacao() {
     }
 
+    public TipoFiliacao(String descricao) {
+        this.descricao = descricao;
+     }
+    
     public TipoFiliacao(String descricao, Set<Filiacao> filiacaos) {
        this.descricao = descricao;
        this.filiacaos = filiacaos;

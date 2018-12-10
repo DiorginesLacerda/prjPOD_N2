@@ -24,8 +24,8 @@ public class SexoController {
 		return "cadsexos";
 	}
 	
-	@RequestMapping(value="salvaetnias", method = RequestMethod.POST)
-	public String salvadeficiencias(@RequestParam("descricao") String descricao,
+	@RequestMapping(value="salvasexos", method = RequestMethod.POST)
+	public String salvadeSexo(@RequestParam("descricao") String descricao,
 			Model model) {
 		
 		

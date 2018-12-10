@@ -32,6 +32,7 @@ public class Deficiencia implements java.io.Serializable {
 	public Deficiencia(String descricao, Integer grau) {
 		this.descricao = descricao;
 		this.grau = grau;
+		this.idDeficiencia = null;
 	}
 
 	public Deficiencia(String descricao, Integer grau, Set<Pessoa> pessoas) {
