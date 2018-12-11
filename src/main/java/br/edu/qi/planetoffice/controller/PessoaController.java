@@ -62,7 +62,7 @@ public class PessoaController {
 	public String salvaPessoas(@RequestParam("etnia") Etnia etnia,
 							@RequestParam("religiao") Religiao religiao,
 							@RequestParam("sexo") Sexo sexo,
-							@RequestParam("deficiencia") Deficiencia deficiencia,
+							@RequestParam("deficiencia") Integer IdDeficiencia,
 							@RequestParam("cep") String cep,
 							@RequestParam("logradouro") String logradouro,
 							@RequestParam("nome") String nome,
@@ -72,12 +72,11 @@ public class PessoaController {
 		
 		Set<Telefone> telefones = new HashSet<>();
 		telefones.add(telefone);
-	
+		Deficiencia deficiencia = new Deficiencia();
+		deficiencia.setIdDeficiencia(IdDeficiencia);
 		Set<Deficiencia> deficiencias_pessoa = new HashSet<>();
 		deficiencias_pessoa.add(deficiencia);
 		
-		
-	
 		
 		Iterable<Pessoa> all = service.findAll();
 		model.addAttribute("all", all);

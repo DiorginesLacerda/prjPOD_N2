@@ -2,17 +2,94 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Cadstro de Aluno</title>
+<title>Cadastro de Aluno</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container">
+
+	<div class="container">
 		<div class="jumbotron" align="center" style="margin-top: 10px;">
-			<h1>Cadastro de Alunos</h1>
+			<h1>Cadastro de Aluno</h1>
 		</div>
+		<div id="listaAluno">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nome Social</th>
+						<th>Pai</th>
+						<th>Mae</th>
+						<th>Etnia</th>
+						<th>Religiao</th>
+						<th>Deficiencia</th>
+					</tr>
+				</thead>
+				<tr th:each="aluno : ${all}">
+					<td><span th:text="${aluno.nomeSocial}"></span></td>
+					<td><span th:text="${aluno.pai}"></span></td>
+					<td><span th:text="${aluno.mae}"></span></td>
+					<td><span th:text="${aluno.etnia}"></span></td>
+					<td><span th:text="${aluno.religiao}"></span></td>
+					<td><span th:text="${aluno.deficiencia}"></span></td>
+				</tr>
+
+			</table>
+		</div>
+
 		
+		<form action="salvaalunos" method="post">
+			<div class="form-group">
+				<label for="nomeSocial">Nome Social</label> <input type="text"
+					class="form-control" id="nomeSocial" name="nomeSocial"
+					placeholder="Nome Social" />
+			</div>
+			<hr />
+			<div class="form-group">
+				<label for="pai">Nome Pai</label> <input type="text"
+					class="form-control" id="pai" name="pai" placeholder="Pai" />
+			</div>
+			<hr />
+			<div class="form-group">
+				<label for="mae">Nome Mae</label> <input type="text"
+					class="form-control" id="mae" name="mae" placeholder="Mae" />
+			</div>
+			<hr />
+			<div class="col-lg-3" th:object="${sexos}">
+				<select class="form-control" id="etnia" name="sexo">
+					<option value="">Selecione o Sexo</option>
+					<option th:each="sexo : ${sexos}" th:value="${sexo.descricao}"
+						th:text="${sexo.descricao}"></option>
+				</select>
+			</div>
+
+			<div class="col-lg-3" th:object="${etnias}">
+				<select class="form-control" id="etnia" name="etnia">
+					<option value="">Selecione a Etnia</option>
+					<option th:each="etnia : ${etnias}" th:value="${etnia.descricao}"
+						th:text="${etnia.descricao}"></option>
+				</select>
+			</div>
+
+			<div class="col-lg-3" th:object="${religioes}">
+				<select class="form-control" id="religiao" name="religiao">
+					<option value="">Selecione a Religiao</option>
+					<option th:each="religiao : ${religioes}"
+						th:value="${religiao.descricao}" th:text="${religiao.descricao}"></option>
+				</select>
+			</div>
+
+			<div class="col-lg-3" th:object="${deficiencias}">
+				<select class="form-control" id="deficiencia" name="deficiencia">
+					<option value="">Selecione a Deficiencia</option>
+					<option th:each="deficiencia : ${deficiencias}"
+						th:value="${deficiencia.descricao}"
+						th:text="${deficiencia.descricao}"></option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-success">Salvar</button>
+		</form>
 
 	</div>
+
 
 </body>
 </html>
